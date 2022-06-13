@@ -1,0 +1,142 @@
+'use strict'
+
+let navMenu = document.querySelector('.nav__menu');
+let burgerImg = document.querySelector('.brgr');
+let closeImg = document.querySelector('.close');
+
+function createBurgerMenu() {
+    burgerImg.addEventListener('click', () => {
+        burgerImg.style.display = "none";
+        closeImg.style.display = "block"
+        navMenu.classList.toggle('menu-toggle');
+    })
+    closeImg.addEventListener('click', () => {
+        burgerImg.style.display = "block";
+        closeImg.style.display = "none";
+        navMenu.classList.toggle('menu-toggle');
+    })
+}
+
+createBurgerMenu();;
+
+// weather api
+
+let apiKey = 'e4f1f2cd3ed2af5a1256401b774b0061';
+let url = 'https://api.openweathermap.org/data/2.5/';
+
+let cityInput = document.querySelector('.input');
+let cityBtn = document.getElementById('cityBtn');
+let locationData = document.querySelector('.location');
+let weatherData = document.querySelector('.temp');
+
+let cityInputValue;
+let chosenCity;
+let chosenCountry;
+let temperature;
+let state;
+
+function fetchWeather() {
+    fetch(`${url}weather?q=${cityInputValue}&units=metric&appid=${apiKey}`)
+        .then((response) => {
+            return response.json()
+        })
+        .then((data) => {
+            let { name, main, sys, weather } = data;
+            chosenCity = name;
+            temperature = main.temp.toFixed();
+            chosenCountry = sys.country;
+            state = weather[0].main;
+            locationData.textContent = `${chosenCity}`;
+            weatherData.textContent = `${temperature}° C  |  ${state}`;
+            toggleWeatherImg();
+        })
+}
+
+let weatherSection = document.querySelector('.weather');
+
+function toggleWeatherImg() {
+    if (state == 'Clouds') {
+        weatherSection.classList.toggle('clouds');
+    } else if (state == 'Clear') {
+        weatherSection.classList.toggle('clear');
+    } else if (state == 'Rain') {
+        weatherSection.classList.toggle('rain');
+    }
+}
+
+cityBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    cityInputValue = cityInput.value;
+    fetchWeather();
+    cityInput.value = '';
+    toggleWeatherImg();
+});
+
+let today = new Date();
+let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+let monthName = months[today.getMonth()];
+let date = `${today.getDate()} ${monthName} ${today.getFullYear()}`;
+let dateString = document.querySelector('.date');
+dateString.innerText = `${date}`;
+
+// Form validation and Sending form data
+
+let emailInput = document.querySelector('#email');
+let formInputs = document.querySelectorAll('.form__input');
+let textarea = document.querySelector('textarea');
+let messageBtn = document.querySelector('.form__btn');
+let form = document.getElementById('contactform');
+
+function validateForm() {
+    if (emailInput.value == '') {
+        emailInput.classList.toggle('error');
+        emailInput.setAttribute('placeholder', 'This field is required!');
+    } else {
+        emailInput.setAttribute('placeholder', 'Email');
+        emailInput.classList.remove('error');
+    }
+}
+
+function clearForm() {
+    formInputs.forEach((item) => {
+        item.value = '';
+    })
+    textarea.value = '';
+}
+
+// function sendData() {
+//     let formData = new FormData(form);
+//     fetch('form.php', {
+//         method: 'POST',
+//         body: formData,
+//     })
+//         .then(function (response) {
+//             return response.text();
+//         })
+//         .then(function (text) {
+//             console.log(text);
+//         })
+//         .catch((error) => { console.log(error); });
+// }
+
+messageBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    validateForm();
+    saveUserData();
+    // sendData();
+    clearForm();
+})
+
+//Дані в Local Storage
+
+let mailValue;
+let msgValue;
+
+function saveUserData() {
+    mailValue = emailInput.value;
+    msgValue = textarea.value;
+    localStorage.message = msgValue;
+    localStorage.email = mailValue;
+};
+
+

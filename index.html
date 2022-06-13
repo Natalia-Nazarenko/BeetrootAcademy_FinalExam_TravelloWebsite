@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Travello</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="mask-icon" href="./img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    </head>
+<body>
+    <header class="header">
+        <nav class="header__nav nav">
+    <div class="nav__logo">
+        <img src="./img/logo.svg" alt="">
+        <a href="./index.html">Travello</a>
+    </div>
+    <ul class="nav__menu menu">
+        <li class="menu__item"><a href="./index.html" class="menu__link">Home</a></li>
+        <li class="menu__item"><a href="./index.html#section_about" class="menu__link" id="about">About</a></li>
+        <li class="menu__item"><a href="./explore.html" class="menu__link">Explore</a></li>
+        <li class="menu__item"><a href="./tours.html" class="menu__link">Book a trip</a></li>
+        <li class="menu__btn"><button class="nav__btn" onclick="window.location.href='contact.html'">Contact us</button></li>
+    </ul>
+    <button class="burger__btn">
+        <img src="./img/burger.svg" alt="" class="brgr">
+        <img src="./img/close.svg" alt="" class="close">
+    </button>
+</nav>
+        <div class="header__banner banner">
+            <h1 class="banner__title">Explore new places with travello</h1>
+            <p class="banner__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+            <button class="banner__btn" onclick="window.location.href='contact.html'">Get started</button>
+        </div>
+    </header>
+    <main class="main">
+        <section class="section section-about" id="section_about">
+            <div class="section-about__img"><img src="./img/waterfall.webp" alt=""></div>
+            <div class="section-about__textblock textblock">
+                <h5 class="textblock__subtitle subtitle">About us</h5>
+                <h2 class="textblock__title title-main">Explore the world with us</h2>
+                <p class="textblock__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
+                <p class="textblock__text text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <button class="textblock__btn" onclick="window.location.href='contact.html'">Get Started</button>
+            </div>
+        </section>
+        <section class="section section-whyus">
+            <h5 class="section-whyus__subtitle subtitle">About us</h5>
+            <h2 class="section-whyus__title title-main">Why choose us</h2>
+            <div class="section-whyus__data data">
+                <div class="data__block block">
+                    <div class="block__img">
+                        <img src="./img/credit.svg" alt="">
+                    </div>
+                    <p class="block__title">Fast Booking</p>
+                    <p class="block__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="data__block block">
+                    <div class="block__img">
+                        <img src="./img/transport.svg" alt="">
+                    </div>
+                    <p class="block__title">Private Transport</p>
+                    <p class="block__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="data__block block">
+                    <div class="block__img">
+                        <img src="./img/destination.svg" alt="">
+                    </div>
+                    <p class="block__title">Diverse Destinations</p>
+                    <p class="block__info">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </section>
+        <section class="section section-numbers">
+            <h5 class="section-numbers__subtitle subtitle">About us</h5>
+            <h2 class="section-numbers__title title-main">Numbers speak louder</h2>
+            <div class="section-numbers__data data">
+                <div class="data__block block">
+                    <strong>125</strong>
+                    <p class="block__title">Service Geographics</p>
+                </div>
+                <div class="data__block block">
+                    <strong>10K</strong>
+                    <p class="block__title">Successful Trips</p>
+                </div>
+                <div class="data__block block">
+                    <strong>10000</strong>
+                    <p class="block__title">Happy Cusomers</p>
+                </div>
+                <div class="data__block block">
+                    <strong>5000</strong>
+                    <p class="block__title">Postitive Reviews</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+    <nav class="footer__nav nav">
+        <div class="nav__logo">
+            <img src="./img/logo.svg" alt="">
+            <a href="">Travello</a>
+        </div>
+        <div class="nav__footer-block footer-block">
+            <h6 class="footer-block__title">Learn More</h6>
+            <ul class="footer-block__menu">
+                <li class="footer-block__item"><a href="./index.html#about" class="footer-block__link">About</a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Press Releases</a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Privacy Policy</a></li>
+                <li class="footer-block__item"><a href="./contact.html" class="footer-block__link">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="nav__footer-block footer-block">
+            <h6 class="footer-block__title">Tickets & Booking</h6>
+            <ul class="footer-block__menu">
+                <li class="footer-block__item"><a href="" class="footer-block__link">Lift Tickets</a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Season Passes</a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Vacation Packages</a></li>
+            </ul>
+        </div>
+        <div class="nav__footer-block footer-block">
+            <h6 class="footer-block__title">Contact Us</h6>
+            <ul class="footer-block__menu">
+                <li class="footer-block__item"><a href="" class="footer-block__link">Hotel Reservation: <span>123-456-7890</span></a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Ticket Office: <span>123-456-7890</span></a></li>
+            </ul>
+        </div>
+        <div class="nav__footer-block footer-block">
+            <h6 class="footer-block__title">Social</h6>
+            <ul class="footer-block__social social">
+                <li class="social__item"><a href="" class="social__link">
+                    <svg>
+                    <use xlink:href="./img/sprite/sprite.svg#fb"></use>
+                  </svg>
+                </a></li>
+                <li class="social__item"><a href="" class="social__link">
+                    <svg>
+                    <use xlink:href="./img/sprite/sprite.svg#ig"></use>
+                  </svg>
+                </a></li>
+                <li class="social__item"><a href="" class="social__link">
+                    <svg>
+                    <use xlink:href="./img/sprite/sprite.svg#tw"></use>
+                  </svg>
+                </a></li>
+                <li class="social__item"><a href="" class="social__link">
+                    <svg>
+                    <use xlink:href="./img/sprite/sprite.svg#yt"></use>
+                  </svg>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+    <small>© 2022 Travello | All Rights Reserved</small>
+</footer>
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Travello</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="mask-icon" href="./img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header class="header header-contacts">
+        <nav class="header__nav nav">
+    <div class="nav__logo">
+        <img src="./img/logo.svg" alt="">
+        <a href="./index.html">Travello</a>
+    </div>
+    <ul class="nav__menu menu">
+        <li class="menu__item"><a href="./index.html" class="menu__link">Home</a></li>
+        <li class="menu__item"><a href="./index.html#section_about" class="menu__link" id="about">About</a></li>
+        <li class="menu__item"><a href="./explore.html" class="menu__link">Explore</a></li>
+        <li class="menu__item"><a href="./tours.html" class="menu__link">Book a trip</a></li>
+        <li class="menu__btn"><button class="nav__btn" onclick="window.location.href='contact.html'">Contact us</button></li>
+    </ul>
+    <button class="burger__btn">
+        <img src="./img/burger.svg" alt="" class="brgr">
+        <img src="./img/close.svg" alt="" class="close">
+    </button>
+</nav>
+        <h1 class="header__title">Contact Us</h1>
+    </header>
+    <main class="main">
+        <section class="section section-form">
+            <h5 class="section-form__subtitle subtitle">Contact</h5>
+            <h2 class="section-form__title title-main">Get in touch</h2>
+            <form class="form" id="contactform">
+                <input type="text" class="form__input" placeholder="Name" id="name" name="name">
+                <input type="email" class="form__input" placeholder="Email" id="email" name="email">
+                <input type="tel" class="form__input" placeholder="Phone No." id="phone" name="tel">
+                <input type="text" class="form__input" placeholder="Subject" id="subj" name="subject">
+                <textarea class="form__textarea" name="message" id="msg" cols="30" rows="10"></textarea>
+                <button class="form__btn" type="submit" >SEND MESSAGE</button>
+            </form>
+            <div class="section-form__data data">
+                <div class="data__block block">
+                    <div class="block__img">
+                        <svg>
+                        <use xlink:href="./img/sprite/sprite-contacts.svg#pin"></use>
+                        </svg>
+                    </div>
+                    <p class="block__title">Address</p>
+                    <address class="block__info">Victoria Street, Green Avenue 882 Sydney Australia</address>
+                </div>
+                <div class="data__block block">
+                    <div class="block__img">
+                        <svg>
+                    <use xlink:href="./img/sprite/sprite-contacts.svg#mail"></use>
+                  </svg>
+                    </div>
+                    <p class="block__title">Email</p>
+                    <p class="block__info">hello@example.com</p>
+                </div>
+                <div class="data__block block">
+                    <div class="block__img">
+                        <svg>
+                    <use xlink:href="./img/sprite/sprite-contacts.svg#tel"></use>
+                  </svg>
+                    </div>
+                    <p class="block__title">Phone</p>
+                    <p class="block__info">+123 456 7890</p>
+                </div>
+            </div>
+        </section>
+    <section class="section-weather weather">
+        <div class="weather__block">
+            <form>
+                <input type="text" class="input" placeholder="Check current weather..." >
+                <button id="cityBtn">Search</button>
+            </form>
+            <div class="date subtitle">June 7 2022</div>
+            <div class="location title-main">Mars</div>
+            <div class="temp">-60° С  |  Clouds</div>
+        </div>
+    </section>
+    </main>
+    <footer class="footer">
+    <nav class="footer__nav nav">
+        <div class="nav__logo">
+            <img src="./img/logo.svg" alt="">
+            <a href="">Travello</a>
+        </div>
+        <div class="nav__footer-block footer-block">
+            <h6 class="footer-block__title">Learn More</h6>
+            <ul class="footer-block__menu">
+                <li class="footer-block__item"><a href="./index.html#about" class="footer-block__link">About</a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Press Releases</a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Privacy Policy</a></li>
+                <li class="footer-block__item"><a href="./contact.html" class="footer-block__link">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="nav__footer-block footer-block">
+            <h6 class="footer-block__title">Tickets & Booking</h6>
+            <ul class="footer-block__menu">
+                <li class="footer-block__item"><a href="" class="footer-block__link">Lift Tickets</a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Season Passes</a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Vacation Packages</a></li>
+            </ul>
+        </div>
+        <div class="nav__footer-block footer-block">
+            <h6 class="footer-block__title">Contact Us</h6>
+            <ul class="footer-block__menu">
+                <li class="footer-block__item"><a href="" class="footer-block__link">Hotel Reservation: <span>123-456-7890</span></a></li>
+                <li class="footer-block__item"><a href="" class="footer-block__link">Ticket Office: <span>123-456-7890</span></a></li>
+            </ul>
+        </div>
+        <div class="nav__footer-block footer-block">
+            <h6 class="footer-block__title">Social</h6>
+            <ul class="footer-block__social social">
+                <li class="social__item"><a href="" class="social__link">
+                    <svg>
+                    <use xlink:href="./img/sprite/sprite.svg#fb"></use>
+                  </svg>
+                </a></li>
+                <li class="social__item"><a href="" class="social__link">
+                    <svg>
+                    <use xlink:href="./img/sprite/sprite.svg#ig"></use>
+                  </svg>
+                </a></li>
+                <li class="social__item"><a href="" class="social__link">
+                    <svg>
+                    <use xlink:href="./img/sprite/sprite.svg#tw"></use>
+                  </svg>
+                </a></li>
+                <li class="social__item"><a href="" class="social__link">
+                    <svg>
+                    <use xlink:href="./img/sprite/sprite.svg#yt"></use>
+                  </svg>
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+    <small>© 2022 Travello | All Rights Reserved</small>
+</footer>
+    <script src="./js/contact.js"></script>
+</body>
+</html>
