@@ -3,17 +3,20 @@
 let navMenu = document.querySelector('.nav__menu');
 let burgerImg = document.querySelector('.brgr');
 let closeImg = document.querySelector('.close');
+let body = document.body;
 
 function createBurgerMenu() {
     burgerImg.addEventListener('click', () => {
         burgerImg.style.display = "none";
         closeImg.style.display = "block"
         navMenu.classList.toggle('menu-toggle');
+        body.style.overflow = 'hidden';
     })
     closeImg.addEventListener('click', () => {
         burgerImg.style.display = "block";
         closeImg.style.display = "none";
         navMenu.classList.toggle('menu-toggle');
+        body.style.overflow = 'visible';
     })
 }
 
@@ -86,12 +89,17 @@ let formInputs = document.querySelectorAll('.form__input');
 let textarea = document.querySelector('textarea');
 let messageBtn = document.querySelector('.form__btn');
 let form = document.getElementById('contactform');
+let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 function validateForm() {
     if (emailInput.value == '') {
         emailInput.classList.toggle('error');
         emailInput.setAttribute('placeholder', 'This field is required!');
-    } else {
+    } else if (!emailInput.value.match(mailFormat)) {
+        emailInput.classList.toggle('error');
+        emailInput.setAttribute('placeholder', 'Invalid email address!');
+    }
+    else {
         emailInput.setAttribute('placeholder', 'Email');
         emailInput.classList.remove('error');
     }
@@ -127,7 +135,7 @@ messageBtn.addEventListener('click', (e) => {
     clearForm();
 })
 
-//Дані в Local Storage
+//Form Data in Local Storage
 
 let mailValue;
 let msgValue;
