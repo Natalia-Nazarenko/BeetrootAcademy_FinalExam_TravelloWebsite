@@ -41,6 +41,7 @@ button:hover {
 .form__textarea {
   grid-column: 1/3;
   outline: none;
+  resize: vertical;
 }
 .form__textarea:focus {
   border: 1px solid #2094E6;
