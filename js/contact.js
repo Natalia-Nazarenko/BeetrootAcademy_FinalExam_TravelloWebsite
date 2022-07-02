@@ -112,26 +112,23 @@ function clearForm() {
     textarea.value = '';
 }
 
-// function sendData() {
-//     let formData = new FormData(form);
-//     fetch('form.php', {
-//         method: 'POST',
-//         body: formData,
-//     })
-//         .then(function (response) {
-//             return response.text();
-//         })
-//         .then(function (text) {
-//             console.log(text);
-//         })
-//         .catch((error) => { console.log(error); });
-// }
+async function sendData() {
+    let formData = new FormData(form);
+    let response = await fetch('form.php', {
+        method: 'POST',
+        body: formData
+    })
+    if (response.ok) {
+        let result = await response.json();
+        console.log(result.message);
+    }
+}
 
 messageBtn.addEventListener('click', (e) => {
     e.preventDefault();
     validateForm();
     saveUserData();
-    // sendData();
+    sendData();
     clearForm();
 })
 
@@ -143,8 +140,10 @@ let msgValue;
 function saveUserData() {
     mailValue = emailInput.value;
     msgValue = textarea.value;
-    localStorage.message = msgValue;
-    localStorage.email = mailValue;
+    if (emailInput.value !== '') {
+        localStorage.message = msgValue;
+        localStorage.email = mailValue;
+    }
 };
 
 
